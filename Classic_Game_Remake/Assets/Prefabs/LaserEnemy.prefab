@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8681103317594630065}
   - component: {fileID: 7283170381782497146}
   - component: {fileID: 7479263109706924428}
+  - component: {fileID: 1311817020899767178}
   m_Layer: 9
   m_Name: LaserEnemy
   m_TagString: Untagged
@@ -146,3 +147,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32911295, y: 1.1719825}
   m_EdgeRadius: 0
+--- !u!114 &1311817020899767178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90855473931857431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbf67ee3ee64ec40a7a07efc5895b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 0}
+  speed: 20
