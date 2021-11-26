@@ -97,4 +97,12 @@ public class Invaders : MonoBehaviour {
     private void InvaderKilled(){
         this.amountKilled++;
     }
+
+    private void GameWon()
+    {
+        if (amountAlive == 0f)
+        {
+            SceneManager.LoadScene("GameWon");
+        }
+    }
 }
