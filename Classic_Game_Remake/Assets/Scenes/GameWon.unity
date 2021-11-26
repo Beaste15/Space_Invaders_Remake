@@ -881,7 +881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Beat Space Intruders!
+  m_Text: You Survived!
 --- !u!222 &2138303501
 CanvasRenderer:
   m_ObjectHideFlags: 0

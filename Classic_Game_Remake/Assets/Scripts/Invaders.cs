@@ -5,9 +5,9 @@ public class Invaders : MonoBehaviour {
 
     public Invader[] prefabs;
 
-    public int rows = 5;
+    int rows = 5;
 
-    public int columns = 11;
+    int columns = 6;
 
     public AnimationCurve speed;
 
@@ -16,8 +16,6 @@ public class Invaders : MonoBehaviour {
     public int totalInvaders => this.rows + this.columns;
 
     public float percentKilled => (float)this.amountKilled / (float)this.totalInvaders;
-
-    public float missleAttackRate = 1.0f;
 
     public int amountAlive => this.totalInvaders - this.amountKilled;
 
@@ -44,7 +42,7 @@ public class Invaders : MonoBehaviour {
     }
 
     private void Start() {
-        InvokeRepeating(nameof(MissleAttack), this.missleAttackRate, this.missleAttackRate);
+        InvokeRepeating(nameof(MissleAttack),0.2f ,0.2f);
     }
 
     private void Update() {
@@ -88,7 +86,8 @@ public class Invaders : MonoBehaviour {
                 continue;
             }
 
-            if (Random.value < (1.0f / (float)this.amountAlive)) {
+            if (Random.value < (1.0f / 5.0f))
+            {
                 Instantiate(this.misslePrefab, invader.position, Quaternion.identity);
                 break;
             }
@@ -96,11 +95,8 @@ public class Invaders : MonoBehaviour {
     }
     private void InvaderKilled(){
         this.amountKilled++;
-    }
-
-    private void GameWon()
-    {
-        if (amountAlive == 0f)
+        Debug.Log(this.amountKilled);
+        if (this.amountKilled == 30)
         {
             SceneManager.LoadScene("GameWon");
         }

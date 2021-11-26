@@ -31,8 +31,7 @@ public class Player : MonoBehaviour
     private void Shoot()
     {
 
-        if (!_LaserActive)
-        {
+        if (!_LaserActive) {
             Projectile projectile = Instantiate(this.LaserPrefab, this.transform.position, Quaternion.identity);
             projectile.destroyed += laserDestroyed;
             _LaserActive = true;
