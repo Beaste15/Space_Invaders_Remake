@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class Invaders : MonoBehaviour {
 
+    public AudioSource source;
+
+    public AudioClip triggerSound;
+
     public Invader[] prefabs;
 
     int rows = 5;
@@ -13,7 +17,7 @@ public class Invaders : MonoBehaviour {
 
     public int amountKilled { get; private set; }
 
-    public int totalInvaders => this.rows + this.columns;
+    private int totalInvaders = 30;
 
     public float percentKilled => (float)this.amountKilled / (float)this.totalInvaders;
 
@@ -42,7 +46,8 @@ public class Invaders : MonoBehaviour {
     }
 
     private void Start() {
-        InvokeRepeating(nameof(MissleAttack),0.2f ,0.2f);
+        // Fire rate for the Invaders
+        InvokeRepeating(nameof(MissleAttack),0.175f, 0.175f);
     }
 
     private void Update() {
@@ -86,16 +91,16 @@ public class Invaders : MonoBehaviour {
                 continue;
             }
 
-            if (Random.value < (1.0f / 5.0f))
+            if (Random.value < 0.1f)
             {
                 Instantiate(this.misslePrefab, invader.position, Quaternion.identity);
+                source.PlayOneShot(triggerSound);
                 break;
             }
         }
     }
     private void InvaderKilled(){
         this.amountKilled++;
-        Debug.Log(this.amountKilled);
         if (this.amountKilled == 30)
         {
             SceneManager.LoadScene("GameWon");

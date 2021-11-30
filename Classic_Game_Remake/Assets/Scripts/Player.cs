@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public AudioSource source;
+
+    public AudioClip triggerSound;
 
     public Projectile LaserPrefab;
 
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour
 
         if (!_LaserActive) {
             Projectile projectile = Instantiate(this.LaserPrefab, this.transform.position, Quaternion.identity);
+            source.PlayOneShot(triggerSound);
             projectile.destroyed += laserDestroyed;
             _LaserActive = true;
         }

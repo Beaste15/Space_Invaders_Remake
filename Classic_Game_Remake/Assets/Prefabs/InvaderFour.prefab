@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608602518320795783, guid: 2ab4df72fca84604ea7dd7cbdb4ae8ca, type: 3}
       propertyPath: animationSprites.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8608602518320795783, guid: 2ab4df72fca84604ea7dd7cbdb4ae8ca, type: 3}
       propertyPath: animationSprites.Array.data[0]
@@ -119,5 +119,9 @@ PrefabInstance:
       propertyPath: animationSprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: ca389926cd8fa074085e28183ed8e9f8, type: 3}
+    - target: {fileID: 8608602518320795783, guid: 2ab4df72fca84604ea7dd7cbdb4ae8ca, type: 3}
+      propertyPath: animationSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e756c9c33fff6724da60ff4455723c50, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ab4df72fca84604ea7dd7cbdb4ae8ca, type: 3}
